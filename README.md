@@ -49,7 +49,7 @@ Install the dependencies using the following command:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/lunar-lander-project.git
+git clone https://github.com/Piyush12-kumar/Lunar-Lander-Project
 cd lunar-lander-project
 
 # Install dependencies
