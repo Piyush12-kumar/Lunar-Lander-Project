@@ -16,9 +16,12 @@ def evaluate_policy(policy, policy_action, total_episodes=100, render_first=5):
             action = policy_action(policy, observation)
             observation, reward, terminated, truncated, info = env.step(action)
             episode_reward += reward
+            
             done = terminated or truncated
         env.close()
+        print(episode_reward)
         total_reward += episode_reward
+        
     return total_reward / total_episodes
 
 def main():
@@ -52,7 +55,7 @@ def main():
     policy_action_func = policy_module.policy_action
 
     # Evaluate the policy over 100 episodes (first 5 are rendered).
-    average_reward = evaluate_policy(policy, policy_action_func, total_episodes=100, render_first=5)
+    average_reward = evaluate_policy(policy, policy_action_func, total_episodes=100, render_first=0)
     print(f"Average reward over 100 episodes: {average_reward:.2f}")
 
 if __name__ == "__main__":
